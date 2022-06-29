@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>C79</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <center>
+            <h3 style="margin-top: 20px; margin-bottom: 20px;">List of students in my class</h3>
+            <div>
+                <span>1</span>
+                <input type="text"placeholder="Name of student" id="student_1">
+                <br><br>
+    
+                <span>2</span>
+                <input type="text"placeholder="Name of student" id="student_2">
+                <br><br>
+                
+                <span>3</span>
+                <input type="text"placeholder="Name of student" id="student_3">
+                <br><br>
+                
+                <span>4</span>
+                <input type="text"placeholder="Name of student" id="student_4">
+                <br><br>
+            </div>
+            <button onclick="submit()" id="submit_button">Submit</button>
+            <br><br>
+            <div id="display_name" style="font-weight: bold;"></div>
+            <br><br>
+            <button onclick="sorting()" id="sort_button">Sort</button>
+        </center>
+
+        <script>
+            student_array=[]
+            function submit()
+            {
+                var name_1=document.getElementById("student_1").value;
+                var name_2=document.getElementById("student_2").value;
+                var name_3=document.getElementById("student_3").value;
+                var name_4=document.getElementById("student_4").value;
+
+                student_array.push(name_1);
+                student_array.push(name_2);
+                student_array.push(name_3);
+                student_array.push(name_4);
+                
+                console.log(student_array);
+
+                document.getElementById("display_name").innerHTML = student_array;
+                document.getElementById("submit_button").style.display = "none";
+                document.getElementById("sort_button").style.display = "inline_block";
+            }
+            function sort()
+           {
+            student_array.sort()
+            console.log(student_array)
+            document.getElementById("display_name").innerHTML = student_array
+           } 
+        </script>
+    </body>
+</html>
